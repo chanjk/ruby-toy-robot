@@ -56,4 +56,30 @@ describe Directions do
       expect(Directions::WEST.dy).to be 0
     end
   end
+
+  describe "#left" do
+    context "with argument NORTH" do
+      it "returns WEST" do
+        expect(Directions.left(Directions::NORTH)).to be Directions::WEST
+      end
+    end
+
+    context "with argument EAST" do
+      it "returns NORTH" do
+        expect(Directions.left(Directions::EAST)).to be Directions::NORTH
+      end
+    end
+
+    context "with argument SOUTH" do
+      it "returns EAST" do
+        expect(Directions.left(Directions::SOUTH)).to be Directions::EAST
+      end
+    end
+
+    context "with argument WEST" do
+      it "returns SOUTH" do
+        expect(Directions.left(Directions::WEST)).to be Directions::SOUTH
+      end
+    end
+  end
 end
