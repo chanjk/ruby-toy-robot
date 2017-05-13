@@ -16,6 +16,10 @@ module Directions
     end
   end
 
+  def self.right(direction)
+    left(left(left(direction)))
+  end
+
   NORTH = Direction.new(0, 1)
   EAST = Direction.new(1, 0)
   SOUTH = Direction.new(0, -1)
