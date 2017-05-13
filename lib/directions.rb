@@ -17,7 +17,7 @@ module Directions
   end
 
   def self.right(direction)
-    left(left(left(direction)))
+    left left left direction
   end
 
   NORTH = Direction.new(0, 1)
