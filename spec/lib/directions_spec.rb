@@ -1,7 +1,7 @@
 require 'directions'
 
 describe Directions do
-  describe Directions::NORTH do
+  describe "NORTH" do
     it "is an instance of Direction" do
       expect(Directions::NORTH).to be_instance_of Directions::Direction
     end
@@ -15,7 +15,7 @@ describe Directions do
     end
   end
 
-  describe Directions::EAST do
+  describe "EAST" do
     it "is an instance of Direction" do
       expect(Directions::EAST).to be_instance_of Directions::Direction
     end
@@ -29,7 +29,7 @@ describe Directions do
     end
   end
 
-  describe Directions::SOUTH do
+  describe "SOUTH" do
     it "is an instance of Direction" do
       expect(Directions::SOUTH).to be_instance_of Directions::Direction
     end
@@ -43,7 +43,7 @@ describe Directions do
     end
   end
 
-  describe Directions::WEST do
+  describe "WEST" do
     it "is an instance of Direction" do
       expect(Directions::WEST).to be_instance_of Directions::Direction
     end
