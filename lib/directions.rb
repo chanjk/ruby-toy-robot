@@ -2,8 +2,12 @@ module Directions
   class Direction
     attr_reader :dx, :dy
 
-    def initialize(dx, dy)
-      @dx, @dy = dx, dy
+    def initialize(name, dx, dy)
+      @name, @dx, @dy = name, dx, dy
+    end
+
+    def to_s
+      @name
     end
   end
 
@@ -20,8 +24,8 @@ module Directions
     left left left direction
   end
 
-  NORTH = Direction.new(0, 1)
-  EAST = Direction.new(1, 0)
-  SOUTH = Direction.new(0, -1)
-  WEST = Direction.new(-1, 0)
+  NORTH = Direction.new("NORTH", 0, 1)
+  EAST = Direction.new("EAST", 1, 0)
+  SOUTH = Direction.new("SOUTH", 0, -1)
+  WEST = Direction.new("WEST", -1, 0)
 end

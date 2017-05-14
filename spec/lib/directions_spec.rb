@@ -16,6 +16,10 @@ describe Directions do
     it "has a dy of 1" do
       expect(Directions::NORTH.dy).to be 1
     end
+
+    it "has the string representation NORTH" do
+      expect(Directions::NORTH.to_s).to eq "NORTH"
+    end
   end
 
   describe "EAST" do
@@ -29,6 +33,10 @@ describe Directions do
 
     it "has a dy of 0" do
       expect(Directions::EAST.dy).to be 0
+    end
+
+    it "has the string representation EAST" do
+      expect(Directions::EAST.to_s).to eq "EAST"
     end
   end
 
@@ -44,6 +52,10 @@ describe Directions do
     it "has a dy of -1" do
       expect(Directions::SOUTH.dy).to be -1
     end
+
+    it "has the string representation SOUTH" do
+      expect(Directions::SOUTH.to_s).to eq "SOUTH"
+    end
   end
 
   describe "WEST" do
@@ -57,6 +69,10 @@ describe Directions do
 
     it "has a dy of 0" do
       expect(Directions::WEST.dy).to be 0
+    end
+
+    it "has the string representation WEST" do
+      expect(Directions::WEST.to_s).to eq "WEST"
     end
   end
 
