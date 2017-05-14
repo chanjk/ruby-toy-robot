@@ -37,4 +37,38 @@ describe Robot do
       end
     end
   end
+
+  describe "#turn_left" do
+    context "given a NORTH-facing robot" do
+      it "returns a robot at the same position facing WEST" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::NORTH).turn_left).to have_attributes(x: x, y: y, direction: Directions::WEST)
+        }
+      end
+    end
+
+    context "given a EAST-facing robot" do
+      it "returns a robot at the same position facing NORTH" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::EAST).turn_left).to have_attributes(x: x, y: y, direction: Directions::NORTH)
+        }
+      end
+    end
+
+    context "given a SOUTH-facing robot" do
+      it "returns a robot at the same position facing EAST" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::SOUTH).turn_left).to have_attributes(x: x, y: y, direction: Directions::EAST)
+        }
+      end
+    end
+
+    context "given a WEST-facing robot" do
+      it "returns a robot at the same position facing SOUTH" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::WEST).turn_left).to have_attributes(x: x, y: y, direction: Directions::SOUTH)
+        }
+      end
+    end
+  end
 end

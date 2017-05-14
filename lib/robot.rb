@@ -10,4 +10,8 @@ class Robot
   def move
     self.class.new(x + direction.dx, y + direction.dy, direction)
   end
+
+  def turn_left
+    self.class.new(x, y, Directions.left(direction))
+  end
 end
