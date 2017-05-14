@@ -14,4 +14,8 @@ class Robot
   def turn_left
     self.class.new(x, y, Directions.left(direction))
   end
+
+  def turn_right
+    self.class.new(x, y, Directions.right(direction))
+  end
 end
