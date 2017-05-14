@@ -105,4 +105,38 @@ describe Robot do
       end
     end
   end
+
+  describe "#to_s" do
+    context "given a NORTH-facing robot" do
+      it "returns 'X,Y,NORTH' where X, Y are the robot's coordinates" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::NORTH).to_s).to eq "#{x},#{y},NORTH"
+        }
+      end
+    end
+
+    context "given a EAST-facing robot" do
+      it "returns 'X,Y,EAST' where X, Y are the robot's coordinates" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::EAST).to_s).to eq "#{x},#{y},EAST"
+        }
+      end
+    end
+
+    context "given a SOUTH-facing robot" do
+      it "returns 'X,Y,SOUTH' where X, Y are the robot's coordinates" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::SOUTH).to_s).to eq "#{x},#{y},SOUTH"
+        }
+      end
+    end
+
+    context "given a WEST-facing robot" do
+      it "returns 'X,Y,WEST' where X, Y are the robot's coordinates" do
+        property_of(&coordinates).check { |x, y|
+          expect(Robot.new(x, y, Directions::WEST).to_s).to eq "#{x},#{y},WEST"
+        }
+      end
+    end
+  end
 end

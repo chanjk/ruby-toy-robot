@@ -18,4 +18,8 @@ class Robot
   def turn_right
     self.class.new(x, y, Directions.right(direction))
   end
+
+  def to_s
+    "#{x},#{y},#{direction}"
+  end
 end
