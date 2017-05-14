@@ -1,6 +1,9 @@
 require 'directions'
+require 'rantly/rspec_extensions'
 
 describe Directions do
+  all_directions = [Directions::NORTH, Directions::EAST, Directions::SOUTH, Directions::WEST]
+
   describe "NORTH" do
     it "is an instance of Direction" do
       expect(Directions::NORTH).to be_instance_of Directions::Direction
@@ -81,6 +84,26 @@ describe Directions do
         expect(Directions.left(Directions::WEST)).to be Directions::SOUTH
       end
     end
+
+    describe "then #right" do
+      it "returns the starting direction" do
+        property_of {
+          choose(*all_directions)
+        }.check { |d|
+          expect(Directions.right Directions.left d).to be d
+        }
+      end
+    end
+
+    describe "4 times in a row" do
+      it "returns the starting direction" do
+        property_of {
+          choose(*all_directions)
+        }.check { |d|
+          expect(Directions.left Directions.left Directions.left Directions.left d).to be d
+        }
+      end
+    end
   end
 
   describe "#right" do
@@ -105,6 +128,26 @@ describe Directions do
     context "with argument WEST" do
       it "returns NORTH" do
         expect(Directions.right(Directions::WEST)).to be Directions::NORTH
+      end
+    end
+
+    describe "then #left" do
+      it "returns the starting direction" do
+        property_of {
+          choose(*all_directions)
+        }.check { |d|
+          expect(Directions.left Directions.right d).to be d
+        }
+      end
+    end
+
+    describe "4 times in a row" do
+      it "returns the starting direction" do
+        property_of {
+          choose(*all_directions)
+        }.check { |d|
+          expect(Directions.right Directions.right Directions.right Directions.right d).to be d
+        }
       end
     end
   end
