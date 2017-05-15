@@ -9,6 +9,8 @@ module Simulator
       run_count -= 1
     end
 
+    print "> "
+
     stringArray = gets.chomp.strip.upcase.split
     command, args = stringArray[0], stringArray[1..-1].flat_map { |s| s.split(",") }
 

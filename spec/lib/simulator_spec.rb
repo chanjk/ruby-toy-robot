@@ -31,7 +31,7 @@ describe Simulator do
         it "outputs '#{expected.chomp}'" do
           expect {
             play_with_inputs(inputs)
-          }.to output(expected).to_stdout
+          }.to output("> " * inputs.length + expected).to_stdout
         end
       end
     end
