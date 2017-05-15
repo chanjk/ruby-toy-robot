@@ -20,6 +20,8 @@ describe Simulator do
       [["PLACE 4,4,EAST", "MOVE", "LEFT", "MOVE", "REPORT"], "4,4,NORTH\n"],
       [["PLACE 1,2,EAST", "MOVE", "MOVE", "LEFT", "MOVE", "REPORT"], "3,3,NORTH\n"],
       [["PLACE 4,2,WEST", "MOVE", "RIGHT", "MOVE", "MOVE", "REPORT"], "3,4,NORTH\n"],
+      [["PLACE 5,5,NORTH", "REPORT"], ""],
+      [["PLACE -1,-1,SOUTH", "REPORT"], ""],
       [["PLACE 1,2,NORTH", "MOVE"], ""],
       [['$@%*^#{*&^*}'], ""],
       [["PLC12NORTH", "REPORT"], ""],
