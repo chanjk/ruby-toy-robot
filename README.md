@@ -1,6 +1,6 @@
 # Toy Robot Simulator
 
-`Ruby`
+`Ruby 2.3.3`
 
 ## Introduction
 This application simulates a toy robot moving on a 5 x 5 table.
