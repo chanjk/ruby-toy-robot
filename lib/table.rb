@@ -4,6 +4,6 @@ class Table
   end
 
   def contains?(x, y)
-    (x.between? 0, 4) && (y.between? 0, 4)
+    (x.between? 0, @width - 1) && (y.between? 0, @length - 1)
   end
 end
